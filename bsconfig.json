@@ -2,7 +2,7 @@
 	"name": "my-gatsby-app",
 	"bsc-flags": ["-bs-no-version-header", "-bs-super-errors"],
     "reason": { "react-jsx": 2 },
-    "bs-dependencies": ["reason-react"],
+    "bs-dependencies": ["reason-react", "bs-css"],
     "sources": [
         {
             "dir": "src",
