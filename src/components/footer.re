@@ -9,7 +9,6 @@ module Styles = {
       gridGap(em(1.0)),
       paddingRight(`percent(5.0)),
       gridTemplateColumns([auto, auto, auto, auto]),
-      width(`percent(100.0)),
       justifyContent(`endGrid),
     ]);
 
@@ -41,7 +40,7 @@ type jsProps = {. data: data};
 let make = (~data, _children) => {
   ...component,
   render: _self =>
-    <div>
+    <div className="footer">
       <p> (ReasonReact.string("Built using: ")) </p>
       <div className=Styles.gridContainer>
         (

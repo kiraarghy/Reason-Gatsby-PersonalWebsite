@@ -56,7 +56,7 @@ type jsProps = {. data: data};
 let make = (~data, _children) => {
   ...component,
   render: _self =>
-    <div className=Styles.container>
+    <div className=(Styles.container ++ " body")>
       <h1 className=Styles.text>
         (ReasonReact.string(data##contentfulAbout##name))
       </h1>
@@ -65,7 +65,6 @@ let make = (~data, _children) => {
         alt=data##contentfulAbout##portrait##description
         src=(data##contentfulAbout##portrait##file##url ++ "?w=300&h=300")
       />
-      <Content data=data##contentfulAbout##markdown />
     </div>,
 };
 
