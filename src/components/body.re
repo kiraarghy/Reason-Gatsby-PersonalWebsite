@@ -2,19 +2,25 @@ let component = ReasonReact.statelessComponent("Header");
 
 module Styles = {
   open Css;
+
+  let container = style([height(px(1000))]);
   let picture =
     style([
-      width(`percent(30.0)),
+      width(`percent(20.0)),
       border(px(3), solid, hex("E27D60")),
       borderRadius(px(400)),
-      marginTop(em(3.0)),
-      marginLeft(em(3.0)),
+      marginTop(`percent(5.0)),
+      marginLeft(`percent(3.0)),
+      position(fixed),
     ]);
 
   let text =
     style([
       fontFamily("Lato"),
       zIndex(2),
+      left(`percent(25.0)),
+      marginTop(`percent(13.0)),
+      width(`percent(20.0)),
       position(fixed),
       color(hex("FFFFFF")),
     ]);
@@ -31,14 +37,14 @@ type portrait = {
 };
 
 [@bs.deriving abstract]
-type markdown = {markdown: string};
+type blah = {markdown: string};
 
 [@bs.deriving abstract]
 type contentfulAbout = {
   .
   name: string,
   portrait: portrait,
-  content: markdown,
+  content: blah,
 };
 
 [@bs.deriving abstract]
@@ -50,7 +56,7 @@ type jsProps = {. data: data};
 let make = (~data, _children) => {
   ...component,
   render: _self =>
-    <div>
+    <div className=Styles.container>
       <h1 className=Styles.text>
         (ReasonReact.string(data##contentfulAbout##name))
       </h1>

@@ -7,9 +7,10 @@ module Styles = {
     style([
       display(inlineGrid),
       gridGap(em(1.0)),
-      paddingLeft(`percent(5.0)),
+      paddingRight(`percent(5.0)),
       gridTemplateColumns([auto, auto, auto, auto]),
-      width(`percent(40.0)),
+      width(`percent(100.0)),
+      justifyContent(`endGrid),
     ]);
 
   let gridItem = style([width(em(2.0))]);
@@ -23,7 +24,6 @@ type contentfulAbout = {
   .
   name: string,
   portrait: Body.portrait,
-  /* about: Body.about, */
   builtUsing:
     array({
       .

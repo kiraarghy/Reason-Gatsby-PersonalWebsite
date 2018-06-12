@@ -6,13 +6,6 @@ import './index.css'
 
 const Layout = ({ children, data }) => (
   <div>
-    <Helmet
-      //   title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
     <div
       style={{
         margin: '0 auto',
