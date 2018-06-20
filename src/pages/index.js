@@ -1,14 +1,19 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Header from '../../lib/js/src/components/header.bs.js'
+import Body from '../../lib/js/src/components/body.bs.js'
 import Footer from '../../lib/js/src/components/footer.bs.js'
+import Content from '../../lib/js/src/components/content.bs.js'
+import ProjectWrapper from '../../lib/js/src/components/projectWrapper.bs.js'
+import './index.css'
 
 const IndexPage = data => {
   console.log(data)
   return (
-    <div>
-      <Header data={data.data} />
-	  <Footer data={data.data} />
+    <div className="page">
+      <Body data={data.data} />
+      <Content data={data.data} />
+      <ProjectWrapper data={data.data} />
+      <Footer data={data.data} />
     </div>
   )
 }
@@ -16,21 +21,41 @@ const IndexPage = data => {
 export default IndexPage
 
 export const query = graphql`
-query blah {
-	contentfulAbout {
-	  name
-	  portrait {
-		description
-		file {
-		  url
-		}
-	  }
-	  builtUsing {
-		title
-		file {
-		  url
-		}
-	  }
-	}
-  }  
+  query blah {
+    allContentfulProjects {
+      edges {
+        node {
+          projectTItle
+          logo {
+            file {
+              url
+            }
+            title
+            description
+          }
+          blurb {
+            blurb
+          }
+        }
+      }
+    }
+    contentfulAbout {
+      name
+      portrait {
+        description
+        file {
+          url
+        }
+      }
+      markdown {
+        markdown
+      }
+      builtUsing {
+        title
+        file {
+          url
+        }
+      }
+    }
+  }
 `
