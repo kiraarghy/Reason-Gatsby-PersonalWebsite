@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import Body from '../../lib/js/src/components/body.bs.js'
 import Footer from '../../lib/js/src/components/footer.bs.js'
 import Content from '../../lib/js/src/components/content.bs.js'
+import ProjectWrapper from '../../lib/js/src/components/projectWrapper.bs.js'
 import './index.css'
 
 const IndexPage = data => {
@@ -11,7 +12,7 @@ const IndexPage = data => {
     <div className="page">
       <Body data={data.data} />
       <Content data={data.data} />
-      <div className="work" />
+      <ProjectWrapper data={data.data} />
       <Footer data={data.data} />
     </div>
   )
@@ -21,6 +22,23 @@ export default IndexPage
 
 export const query = graphql`
   query blah {
+    allContentfulProjects {
+      edges {
+        node {
+          projectTItle
+          logo {
+            file {
+              url
+            }
+            title
+            description
+          }
+          blurb {
+            blurb
+          }
+        }
+      }
+    }
     contentfulAbout {
       name
       portrait {

@@ -3,7 +3,6 @@ let component = ReasonReact.statelessComponent("Header");
 module Styles = {
   open Css;
 
-  let container = style([height(px(1000))]);
   let picture =
     style([
       width(`percent(20.0)),
@@ -48,7 +47,11 @@ type contentfulAbout = {
 };
 
 [@bs.deriving abstract]
-type data = {. contentfulAbout: contentfulAbout};
+type data = {
+  .
+  allContentfulProjects: ProjectWrapper.allContentfulProjects,
+  contentfulAbout: contentfulAbout,
+};
 
 [@bs.deriving abstract]
 type jsProps = {. data: data};
@@ -56,7 +59,7 @@ type jsProps = {. data: data};
 let make = (~data, _children) => {
   ...component,
   render: _self =>
-    <div className=(Styles.container ++ " body")>
+    <div className=" body">
       <h1 className=Styles.text>
         (ReasonReact.string(data##contentfulAbout##name))
       </h1>

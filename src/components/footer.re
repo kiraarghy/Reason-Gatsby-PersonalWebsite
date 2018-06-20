@@ -5,14 +5,20 @@ module Styles = {
 
   let gridContainer =
     style([
-      display(inlineGrid),
+      display(grid),
       gridGap(em(1.0)),
       paddingRight(`percent(5.0)),
-      gridTemplateColumns([auto, auto, auto, auto]),
+      gridTemplateColumns([
+        `fr(1.0),
+        `fr(1.0),
+        `fr(1.0),
+        `fr(1.0),
+        `fr(8.0),
+      ]),
       justifyContent(`endGrid),
     ]);
 
-  let gridItem = style([width(em(2.0))]);
+  let gridItem = style([width(`percent(70.0))]);
 };
 
 [@bs.deriving abstract]
