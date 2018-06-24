@@ -2,46 +2,33 @@ let component = ReasonReact.statelessComponent("Content");
 
 module Styles = {
   open Css;
+
+  let content =
+    style([
+      gridColumn(6, 8),
+      display(grid),
+      gridTemplateRows([`fr(0.5), `fr(1.0), `fr(0.5)]),
+    ]);
   let text =
     style([
+      gridRow(2, 3),
       fontFamily("Lato"),
-      paddingTop(`percent(13.0)),
+      fontSize(`percent(150.0)),
+      paddingTop(`percent(5.0)),
       color(hex("FFFFFF")),
     ]);
 };
 
 [@bs.deriving abstract]
-type file = {url: string};
-
-[@bs.deriving abstract]
-type portrait = {
-  .
-  description: string,
-  file: file,
-};
-
-[@bs.deriving abstract]
-type blah = {markdown: string};
-
-[@bs.deriving abstract]
-type contentfulAbout = {
-  .
-  name: string,
-  portrait: portrait,
-  content: blah,
-};
-
-[@bs.deriving abstract]
-type data = {. contentfulAbout: contentfulAbout};
-
-[@bs.deriving abstract]
-type jsProps = {. data: data};
+type jsProps = {. data: string};
 
 let make = (~data, _children) => {
   ...component,
   render: _self =>
-    <div className=(Styles.text ++ " content")>
-      (ReasonReact.string(data##contentfulAbout##markdown##markdown))
+    <div className=Styles.content>
+      <div className=(Styles.text ++ " content")>
+        (ReasonReact.string(data))
+      </div>
     </div>,
 };
 

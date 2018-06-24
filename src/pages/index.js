@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Body from '../../lib/js/src/components/body.bs.js'
+import Header from '../../lib/js/src/components/header.bs.js'
+import HeaderImage from '../../lib/js/src/components/headerImage.bs.js'
 import Footer from '../../lib/js/src/components/footer.bs.js'
 import Content from '../../lib/js/src/components/content.bs.js'
 import ProjectWrapper from '../../lib/js/src/components/projectWrapper.bs.js'
@@ -10,8 +11,9 @@ const IndexPage = data => {
   console.log(data)
   return (
     <div className="page">
-      <Body data={data.data} />
-      <Content data={data.data} />
+      <Header data={data.data} />
+      <HeaderImage data={data.data} />
+      <Content data={data.data.contentfulAbout.markdown.markdown} />
       <ProjectWrapper data={data.data} />
       <Footer data={data.data} />
     </div>

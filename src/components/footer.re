@@ -28,7 +28,7 @@ type file = {url: string};
 type contentfulAbout = {
   .
   name: string,
-  portrait: Body.portrait,
+  portrait: Header.portrait,
   builtUsing:
     array({
       .
