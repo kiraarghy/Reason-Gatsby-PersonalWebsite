@@ -3,24 +3,19 @@ let component = ReasonReact.statelessComponent("Header");
 module Styles = {
   open Css;
 
-  let picture =
-    style([
-      width(`percent(20.0)),
-      border(px(3), solid, hex("E27D60")),
-      borderRadius(px(400)),
-      marginTop(`percent(5.0)),
-      marginLeft(`percent(3.0)),
-      position(fixed),
-    ]);
+  let wrapper = style([gridColumn(4, 5)]);
 
   let text =
     style([
       fontFamily("Lato"),
+      fontSize(`vw(8.0)),
       zIndex(2),
       left(`percent(25.0)),
-      marginTop(`percent(13.0)),
-      width(`percent(20.0)),
-      position(fixed),
+      paddingTop(`px(58)),
+      top(`percent(0.0)),
+      minWidth(`px(150)),
+      textTransform(uppercase),
+      position(sticky),
       color(hex("FFFFFF")),
     ]);
 };
@@ -59,15 +54,10 @@ type jsProps = {. data: data};
 let make = (~data, _children) => {
   ...component,
   render: _self =>
-    <div className=" body">
+    <div className=Styles.wrapper>
       <h1 className=Styles.text>
         (ReasonReact.string(data##contentfulAbout##name))
       </h1>
-      <img
-        className=Styles.picture
-        alt=data##contentfulAbout##portrait##description
-        src=(data##contentfulAbout##portrait##file##url ++ "?w=300&h=300")
-      />
     </div>,
 };
 
