@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 import './index.css'
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children }) => (
   <div>
     <div
       style={{
@@ -23,13 +23,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
