@@ -1,6 +1,6 @@
 ####{BSB GENERATED: NO EDIT
-FLG -ppx '/Users/kara/dev/reason/personal-website/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
-FLG -ppx /Users/kara/dev/reason/personal-website/node_modules/bs-platform/lib/bsppx.exe
+FLG -ppx '/Users/kara/.nvm/versions/node/v10.1.0/lib/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
+FLG -ppx /Users/kara/.nvm/versions/node/v10.1.0/lib/node_modules/bs-platform/lib/bsppx.exe
 S /Users/kara/dev/reason/personal-website/node_modules/bs-platform/lib/ocaml
 B /Users/kara/dev/reason/personal-website/node_modules/bs-platform/lib/ocaml
 FLG -nostdlib -no-alias-deps -color always
