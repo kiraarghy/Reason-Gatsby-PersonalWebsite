@@ -11,11 +11,10 @@ module Styles = {
 
   let text =
     style([
-      fontFamily("Lato"),
       fontSize(`vw(8.0)),
       zIndex(2),
       left(`percent(25.0)),
-      paddingTop(`px(58)),
+      paddingTop(`px(10)),
       top(`percent(0.0)),
       minWidth(`px(150)),
       textTransform(uppercase),
