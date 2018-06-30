@@ -1,22 +1,22 @@
 .page {
-    display: grid;
-    grid-template-rows: auto auto 5%;
-    grid-template-columns: 0.2fr 1fr 0.1fr minmax(min-content, 1fr) 0.2fr 1fr 1fr 0.2fr;
-    background-color: #85dbc3;
+  display: grid;
+  grid-template-rows: auto auto 5%;
+  grid-template-columns: 0.2fr 1fr 0.1fr minmax(min-content, 1fr) 0.2fr 1fr 1fr 0.2fr;
+  background-color: #85dbc3;
 }
 
-@media screen and (min-width: 600px) {
-    .page {
-        grid-template-rows: 70em auto 5%;
-    }
+@media screen and (min-width: 700px) {
+  .page {
+    grid-template-rows: 70em auto 5%;
+  }
 }
 
 .content {
-    grid-column-start: 6;
-    grid-column-end: 8;
+  grid-column-start: 6;
+  grid-column-end: 8;
 }
 
 .projectWrapper {
-    grid-column-start: 2;
-    grid-column-end: 8;
+  grid-column-start: 2;
+  grid-column-end: 8;
 }

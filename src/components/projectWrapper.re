@@ -14,13 +14,22 @@ module Styles = {
   let projectWrapper =
     style([
       display(grid),
-      gridTemplateColumns([
-        `fr(1.0),
-        `fr(1.0),
-        `fr(0.2),
-        `fr(1.0),
-        `fr(1.0),
-      ]),
+      gridTemplateColumns([`fr(1.0)]),
+      gridGap(`percent(10.0)),
+      media(
+        "(min-width: 1200px)",
+        [
+          gridTemplateColumns([`fr(1.0), `fr(1.0), `fr(1.0)]),
+          gridGap(`percent(10.0)),
+        ],
+      ),
+      media(
+        "(min-width: 650px)",
+        [
+          gridTemplateColumns([`fr(1.0), `fr(1.0)]),
+          gridGap(`percent(10.0)),
+        ],
+      ),
     ]);
 };
 

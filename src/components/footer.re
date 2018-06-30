@@ -13,7 +13,7 @@ module Styles = {
       paddingTop(`percent(3.0)),
       color(`hex("ffff")),
       media(
-        "(min-width: 600px)",
+        "(min-width: 700px)",
         [
           gridColumnStart(5),
           gridColumnEnd(9),

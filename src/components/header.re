@@ -5,7 +5,7 @@ module Styles = {
 
   let wrapper =
     style([
-      media("(min-width: 600px)", [gridColumn(4, 5)]),
+      media("(min-width: 700px)", [gridColumn(4, 5)]),
       gridColumn(4, 7),
     ]);
 
@@ -19,7 +19,7 @@ module Styles = {
       top(`percent(0.0)),
       minWidth(`px(150)),
       textTransform(uppercase),
-      media("(min-width: 600px)", [position(sticky)]),
+      media("(min-width: 700px)", [position(sticky)]),
       color(hex("FFFFFF")),
     ]);
 };
