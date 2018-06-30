@@ -2,10 +2,8 @@ let component = ReasonReact.statelessComponent("Projects");
 
 module Styles = {
   open Css;
-  let project = oddOrEven =>
+  let project =
     style([
-      gridColumn(1, 6),
-      media("(min-width: 600px)", [gridColumn(oddOrEven[0], oddOrEven[1])]),
       backgroundColor(`hex("C38D9E")),
       marginBottom(`percent(10.0)),
       borderRadius(`px(5)),
@@ -14,6 +12,7 @@ module Styles = {
   let icon =
     style([
       height(`percent(5.0)),
+      minHeight(`px(60)),
       marginTop(`percent(-2.0)),
       marginLeft(`percent(-1.0)),
       backgroundColor(`hex("E27D60")),
@@ -24,7 +23,7 @@ module Styles = {
 
   let header =
     style([
-      marginTop(`vh(5.0)),
+      marginTop(`vh(6.0)),
       marginLeft(`percent(3.0)),
       color(`hex("ffff")),
     ]);
@@ -33,13 +32,8 @@ module Styles = {
 
 let make = (~data, ~index, _children) => {
   ...component,
-  render: _self => {
-    let oddOrEven =
-      switch (mod_float(float_of_int(index), 2.0)) {
-      | 1.0 => [|4, 6|]
-      | _ => [|1, 3|]
-      };
-    <div className=(Styles.project(oddOrEven))>
+  render: _self =>
+    <div className=Styles.project>
       <img
         className=Styles.icon
         src=data##logo##file##url
@@ -51,6 +45,5 @@ let make = (~data, ~index, _children) => {
       <p className=Styles.content>
         (ReasonReact.string(data##blurb##blurb))
       </p>
-    </div>;
-  },
+    </div>,
 };

@@ -8,7 +8,7 @@ module Styles = {
       gridColumn(2, 8),
       paddingBottom(`percent(10.0)),
       media(
-        "(min-width: 600px)",
+        "(min-width: 700px)",
         [
           gridColumn(6, 8),
           display(grid),
