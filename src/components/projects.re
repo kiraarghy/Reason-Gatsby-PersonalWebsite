@@ -25,9 +25,9 @@ module Styles = {
     style([
       marginTop(`vh(6.0)),
       marginLeft(`percent(3.0)),
-      color(`hex("ffff")),
+      color(`hex("2b2e88")),
     ]);
-  let content = style([margin(`percent(3.0))]);
+  let content = style([margin(`percent(3.0)), color(`hex("2b2e88"))]);
 };
 
 let make = (~data, ~index, _children) => {
