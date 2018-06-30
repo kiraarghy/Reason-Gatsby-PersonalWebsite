@@ -2,23 +2,34 @@ let component = ReasonReact.statelessComponent("Footer");
 
 module Styles = {
   open Css;
-
+  let footer =
+    style([
+      gridColumnStart(2),
+      gridColumnEnd(8),
+      borderTopLeftRadius(`px(5)),
+      borderTopRightRadius(`px(5)),
+      backgroundColor(`hex("41B3A3")),
+      paddingLeft(`percent(3.0)),
+      paddingTop(`percent(3.0)),
+      color(`hex("ffff")),
+      media(
+        "(min-width: 600px)",
+        [
+          gridColumnStart(5),
+          gridColumnEnd(9),
+          borderTopRightRadius(`px(0)),
+        ],
+      ),
+    ]);
   let gridContainer =
     style([
       display(grid),
       gridGap(em(1.0)),
       paddingRight(`percent(5.0)),
-      gridTemplateColumns([
-        `fr(1.0),
-        `fr(1.0),
-        `fr(1.0),
-        `fr(1.0),
-        `fr(8.0),
-      ]),
-      justifyContent(`endGrid),
+      gridTemplateColumns([`fr(2.0), `fr(2.0), `fr(2.0), `fr(2.0)]),
     ]);
 
-  let gridItem = style([width(`percent(70.0))]);
+  let gridItem = style([width(`percent(50.0))]);
 };
 
 [@bs.deriving abstract]
@@ -46,7 +57,7 @@ type jsProps = {. data: data};
 let make = (~data, _children) => {
   ...component,
   render: _self =>
-    <div className="footer">
+    <div className=Styles.footer>
       <p> (ReasonReact.string("Built using: ")) </p>
       <div className=Styles.gridContainer>
         (
