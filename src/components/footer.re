@@ -21,6 +21,8 @@ module Styles = {
         ],
       ),
     ]);
+
+  let header = style([fontSize(`percent(100.0))]);
   let gridContainer =
     style([
       display(grid),
@@ -57,8 +59,8 @@ type jsProps = {. data: data};
 let make = (~data, _children) => {
   ...component,
   render: _self =>
-    <div className=Styles.footer>
-      <p> (ReasonReact.string("Built using: ")) </p>
+    <section className=Styles.footer>
+      <h1 className=Styles.header> (ReasonReact.string("Built using: ")) </h1>
       <div className=Styles.gridContainer>
         (
           ReasonReact.array(
@@ -76,7 +78,7 @@ let make = (~data, _children) => {
           )
         )
       </div>
-    </div>,
+    </section>,
 };
 
 let default =

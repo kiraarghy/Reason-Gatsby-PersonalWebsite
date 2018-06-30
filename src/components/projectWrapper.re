@@ -61,7 +61,7 @@ let make = (~data, _children) => {
     let edges = data##allContentfulProjects##edges;
     <div className=Styles.projects>
       <div className=Styles.title>
-        (ReasonReact.string("Projects I've worked on :"))
+        (ReasonReact.string("Projects I have worked on"))
       </div>
       <div className=Styles.projectWrapper>
         (
