@@ -7,6 +7,9 @@ module Styles = {
       backgroundColor(`hex("C38D9E")),
       marginBottom(`percent(10.0)),
       borderRadius(`px(5)),
+      cursor(`pointer),
+      textDecoration(`none),
+      hover([textDecoration(`underline)]),
     ]);
 
   let icon =
@@ -19,6 +22,14 @@ module Styles = {
       border(`px(5), `solid, `hex("E27D60")),
       borderRadius(`px(5)),
       position(`absolute),
+      boxShadow(
+        ~x=`px(4),
+        ~y=`px(4),
+        ~blur=`px(7),
+        ~spread=`px(-1),
+        ~inset=false,
+        `hex("000000"),
+      ),
     ]);
 
   let header =
@@ -33,7 +44,7 @@ module Styles = {
 let make = (~data, ~index, _children) => {
   ...component,
   render: _self =>
-    <div className=Styles.project>
+    <a className=Styles.project href=data##url target="_blank">
       <img
         className=Styles.icon
         src=data##logo##file##url
@@ -45,5 +56,5 @@ let make = (~data, ~index, _children) => {
       <p className=Styles.content>
         (ReasonReact.string(data##blurb##blurb))
       </p>
-    </div>,
+    </a>,
 };

@@ -53,6 +53,7 @@ type node = {
   projectTItle: string,
   logo: logo,
   blurb: blurb,
+  url: string,
 };
 
 [@bs.deriving abstract]
