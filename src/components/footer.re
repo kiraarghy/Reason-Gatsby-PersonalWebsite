@@ -9,8 +9,7 @@ module Styles = {
       borderTopLeftRadius(`px(5)),
       borderTopRightRadius(`px(5)),
       backgroundColor(`hex("41B3A3")),
-      paddingLeft(`percent(3.0)),
-      paddingTop(`percent(3.0)),
+      padding(`percent(2.0)),
       color(`hex("ffff")),
       media(
         "(min-width: 700px)",
@@ -22,16 +21,15 @@ module Styles = {
       ),
     ]);
 
-  let header = style([fontSize(`percent(100.0))]);
+  let header = style([fontSize(`em(1.5))]);
   let gridContainer =
     style([
       display(grid),
-      gridGap(em(1.0)),
-      paddingRight(`percent(5.0)),
+      gridGap(`percent(4.0)),
       gridTemplateColumns([`fr(2.0), `fr(2.0), `fr(2.0), `fr(2.0)]),
     ]);
 
-  let gridItem = style([width(`percent(50.0))]);
+  let image = style([width(`percent(80.0))]);
 };
 
 [@bs.deriving abstract]
@@ -66,8 +64,9 @@ let make = (~data, _children) => {
           ReasonReact.array(
             Array.map(
               builtWith =>
-                <div className=Styles.gridItem>
+                <div>
                   <img
+                    className=Styles.image
                     key=builtWith##title
                     alt=builtWith##title
                     src=builtWith##file##url

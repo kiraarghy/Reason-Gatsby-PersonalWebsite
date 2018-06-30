@@ -34,7 +34,7 @@ module Styles = {
 
   let header =
     style([
-      marginTop(`vh(6.0)),
+      marginTop(`vh(8.0)),
       marginLeft(`percent(3.0)),
       color(`hex("2b2e88")),
     ]);
@@ -50,9 +50,9 @@ let make = (~data, ~index, _children) => {
         src=data##logo##file##url
         alt=data##logo##title
       />
-      <h2 className=Styles.header>
+      <h1 className=Styles.header>
         (ReasonReact.string(data##projectTItle))
-      </h2>
+      </h1>
       <p className=Styles.content>
         (ReasonReact.string(data##blurb##blurb))
       </p>
