@@ -3,11 +3,10 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 const Layout = ({ children }) => (
-  <div>
+  <div className="blah">
     <div
       style={{
-        margin: '0 auto',
-        maxWidth: '100%',
+        margin: '0',
         height: '100%',
       }}
     >

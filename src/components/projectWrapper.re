@@ -76,10 +76,7 @@ let make = (~data, _children) => {
       <div className=Styles.projectWrapper>
         (
           ReasonReact.array(
-            Array.mapi(
-              (index, edge) => <Projects data=edge##node index />,
-              edges,
-            ),
+            Array.map(edge => <Projects data=edge##node />, edges),
           )
         )
       </div>

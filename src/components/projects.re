@@ -14,10 +14,9 @@ module Styles = {
 
   let icon =
     style([
-      height(`percent(5.0)),
-      minHeight(`px(60)),
-      marginTop(`percent(-2.0)),
-      marginLeft(`percent(-1.0)),
+      height(`px(60)),
+      marginTop(`px(-10)),
+      marginLeft(`px(-10)),
       backgroundColor(`hex("E27D60")),
       border(`px(5), `solid, `hex("E27D60")),
       borderRadius(`px(5)),
@@ -34,14 +33,14 @@ module Styles = {
 
   let header =
     style([
-      marginTop(`vh(8.0)),
+      paddingTop(`px(45)),
       marginLeft(`percent(3.0)),
       color(`hex("2b2e88")),
     ]);
   let content = style([margin(`percent(3.0)), color(`hex("2b2e88"))]);
 };
 
-let make = (~data, ~index, _children) => {
+let make = (~data, _children) => {
   ...component,
   render: _self =>
     <a className=Styles.project href=data##url target="_blank">
