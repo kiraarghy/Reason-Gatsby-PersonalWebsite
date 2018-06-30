@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "kara_stubbs_portfolio_website",
+  "description": "Portfolio Website",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kara Stubbs karaestubbs@gmail.com",
   "dependencies": {
     "bs-css": "github:kiraarghy/bs-css",
     "gatsby": "^1.9.265",
