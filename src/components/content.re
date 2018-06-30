@@ -5,7 +5,8 @@ module Styles = {
 
   let content =
     style([
-      gridColumn(6, 8),
+      media("(min-width: 600px)", [gridColumn(6, 8)]),
+      gridColumn(2, 8),
       display(grid),
       gridTemplateRows([`fr(0.5), `fr(1.0), `fr(0.5)]),
     ]);

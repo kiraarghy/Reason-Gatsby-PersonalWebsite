@@ -3,7 +3,11 @@ let component = ReasonReact.statelessComponent("Header");
 module Styles = {
   open Css;
 
-  let wrapper = style([gridColumn(4, 5)]);
+  let wrapper =
+    style([
+      media("(min-width: 600px)", [gridColumn(4, 5)]),
+      gridColumn(4, 7),
+    ]);
 
   let text =
     style([
@@ -15,7 +19,7 @@ module Styles = {
       top(`percent(0.0)),
       minWidth(`px(150)),
       textTransform(uppercase),
-      position(sticky),
+      media("(min-width: 600px)", [position(sticky)]),
       color(hex("FFFFFF")),
     ]);
 };
