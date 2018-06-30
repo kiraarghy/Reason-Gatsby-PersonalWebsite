@@ -13,6 +13,9 @@ const Layout = ({ children }) => (
         height: '100%',
       }}
     >
+      <Helmet>
+        <title>Personal Portfolio page of Kara Stubbs</title>
+      </Helmet>
       {children()}
     </div>
   </div>
