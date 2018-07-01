@@ -4,21 +4,24 @@ module Styles = {
   open Css;
   let project =
     style([
-      backgroundColor(`hex("C38D9E")),
+      backgroundColor(`hex("e6b6c5")),
       marginBottom(`percent(10.0)),
       borderRadius(`px(5)),
+      border(`px(2), `dashed, `hex("2b2e88")),
       cursor(`pointer),
       textDecoration(`none),
       hover([textDecoration(`underline)]),
+      color(`hex("000000")),
     ]);
 
   let icon =
     style([
       height(`px(60)),
-      marginTop(`px(-10)),
-      marginLeft(`px(-10)),
-      backgroundColor(`hex("E27D60")),
-      border(`px(5), `solid, `hex("E27D60")),
+      marginTop(`px(-9)),
+      marginLeft(`px(-9)),
+      backgroundColor(`hex("ffffff")),
+      padding(`px(3)),
+      maxWidth(`px(140)),
       borderRadius(`px(5)),
       position(`absolute),
       boxShadow(
@@ -31,13 +34,8 @@ module Styles = {
       ),
     ]);
 
-  let header =
-    style([
-      paddingTop(`px(45)),
-      marginLeft(`percent(3.0)),
-      color(`hex("2b2e88")),
-    ]);
-  let content = style([margin(`percent(3.0)), color(`hex("2b2e88"))]);
+  let header = style([paddingTop(`px(45)), marginLeft(`percent(3.0))]);
+  let content = style([margin(`percent(3.0))]);
 };
 
 let make = (~data, _children) => {
