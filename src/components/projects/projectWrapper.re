@@ -88,3 +88,5 @@ let default =
   ReasonReact.wrapReasonForJs(~component, jsProps =>
     make(~data=jsProps##data, [||])
   );
+
+let helloReactJSGirls = (~blah: string) => Js.log(blah);

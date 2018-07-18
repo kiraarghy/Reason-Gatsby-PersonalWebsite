@@ -7,6 +7,7 @@ module Styles = {
       gridColumnStart(2),
       gridColumnEnd(8),
       borderTopLeftRadius(`px(5)),
+      padding(`px(2)),
       borderTopRightRadius(`px(5)),
       backgroundColor(`hex("41B3A3")),
       padding(`percent(2.0)),
