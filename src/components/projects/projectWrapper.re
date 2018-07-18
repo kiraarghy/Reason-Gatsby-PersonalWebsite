@@ -6,7 +6,6 @@ module Styles = {
 
   let title =
     style([
-      fontFamily("Lato"),
       fontSize(`percent(150.0)),
       paddingBottom(`percent(5.0)),
       color(hex("FFFFFF")),

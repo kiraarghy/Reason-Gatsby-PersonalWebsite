@@ -20,7 +20,6 @@ module Styles = {
   let text =
     style([
       gridRow(2, 3),
-      fontFamily("Lato"),
       fontSize(`percent(150.0)),
       paddingTop(`percent(5.0)),
       color(hex("FFFFFF")),
