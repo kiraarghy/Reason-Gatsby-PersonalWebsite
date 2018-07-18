@@ -14,7 +14,7 @@ module Styles = {
       fontSize(`vw(8.0)),
       zIndex(2),
       left(`percent(25.0)),
-      paddingTop(`px(10)),
+      marginTop(`px(50)),
       top(`percent(0.0)),
       minWidth(`px(150)),
       textTransform(uppercase),

@@ -32,12 +32,14 @@ type jsProps = {. data: string};
 
 let make = (~data, _children) => {
   ...component,
-  render: _self =>
+
+  render: _self =>{
     <div className=Styles.content>
       <div className=(Styles.text ++ " content")>
-        (ReasonReact.string(data))
+        (ReasonReact.array(Array.mapi((i,item) => 
+        <p key={string_of_int(i)}>(ReasonReact.string(item))</p>,Js.String.split("\\n",data),)))
       </div>
-    </div>,
+    </div>}
 };
 
 let default =
