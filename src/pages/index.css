@@ -3,12 +3,11 @@
     grid-template-rows: auto auto 5%;
     grid-template-columns: 0.2fr 1fr 0.1fr minmax(min-content, 1fr) 0.2fr 1fr 1fr 0.2fr;
     background-color: #85dbc3;
-    font-family: 'Raleway', sans-serif;
 }
 
 @media screen and (min-width: 700px) {
     .page {
-        grid-template-rows: 70em auto 5%;
+        grid-template-rows: 40em auto 5%;
     }
 }
 
