@@ -6,7 +6,8 @@ module Styles = {
   let wrapper = style([gridColumn(2, 5), gridRow(1, 2)]);
   let picture =
     style([
-      maxHeight(`auto),
+      maxHeight(`px(700)),
+      marginTop(`px(50)),
       maxWidth(`percent(100.0)),
       borderRadius(px(5)),
       display(none),
