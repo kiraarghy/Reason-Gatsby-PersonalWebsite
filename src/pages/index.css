@@ -1,13 +1,14 @@
 .page {
     display: grid;
-    grid-template-rows: auto auto 5%;
+    grid-template-rows: 3fr auto 5%;
     grid-template-columns: 0.2fr 1fr 0.1fr minmax(min-content, 1fr) 0.2fr 1fr 1fr 0.2fr;
-    background-color: #85dbc3;
+    background: linear-gradient(to bottom right, #85dbc3 0%, #41b3a3 84%);
+    min-width: 300px
 }
 
 @media screen and (min-width: 700px) {
     .page {
-        grid-template-rows: 40em auto 5%;
+        grid-template-rows: 2fr auto 5%;
     }
 }
 

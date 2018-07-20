@@ -8,6 +8,7 @@ module Styles = {
     style([
       fontSize(`percent(150.0)),
       paddingBottom(`percent(5.0)),
+      marginTop(`px(50)),
       color(hex("FFFFFF")),
     ]);
   let projectWrapper =

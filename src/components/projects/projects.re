@@ -51,7 +51,21 @@ let make = (~data, _children) => {
         (ReasonReact.string(data##projectTItle))
       </h1>
       <p className=Styles.content>
-        (ReasonReact.string(data##blurb##blurb))
+        (
+          ReasonReact.array(
+            Array.mapi(
+              (i, item) =>
+                if (i === 0) {
+                  <h3 key=(string_of_int(i))>
+                    (ReasonReact.string(item))
+                  </h3>;
+                } else {
+                  <p key=(string_of_int(i))> (ReasonReact.string(item)) </p>;
+                },
+              Js.String.split("\\n", data##blurb##blurb),
+            ),
+          )
+        )
       </p>
     </a>,
 };

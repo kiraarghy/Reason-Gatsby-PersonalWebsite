@@ -34,9 +34,15 @@ let make = (~data, _children) => {
 
   render: _self =>{
     <div className=Styles.content>
-      <div className=(Styles.text ++ " content")>
+      <div className=(Styles.text)>
         (ReasonReact.array(Array.mapi((i,item) => 
-        <p key={string_of_int(i)}>(ReasonReact.string(item))</p>,Js.String.split("\\n",data),)))
+        if (i === 0) {
+            <h2 key=(string_of_int(i))>
+              (ReasonReact.string(item))
+            </h2>;
+          } else {
+            <p key=(string_of_int(i))> (ReasonReact.string(item)) </p>;
+          },Js.String.split("\\n",data),)))
       </div>
     </div>}
 };
