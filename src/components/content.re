@@ -11,15 +11,12 @@ module Styles = {
         "(min-width: 700px)",
         [
           gridColumn(6, 8),
-          display(grid),
-          gridTemplateRows([`fr(0.5), `fr(1.0), `fr(0.5)]),
-          paddingBottom(`percent(0.0)),
+          alignSelf(`center)
         ],
       ),
     ]);
   let text =
     style([
-      gridRow(2, 3),
       fontSize(`percent(150.0)),
       paddingTop(`percent(5.0)),
       color(hex("FFFFFF")),
