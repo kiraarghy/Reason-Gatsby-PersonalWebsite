@@ -10,8 +10,8 @@ import './index.css'
 const IndexPage = data => {
   return (
     <div className="page">
-      <Header data={data.data} />
       <HeaderImage data={data.data} />
+      <Header data={data.data} />
       <Content data={data.data.contentfulAbout.markdown.markdown} />
       <ProjectWrapper data={data.data} />
       <Footer data={data.data} />
@@ -44,6 +44,12 @@ export const query = graphql`
     contentfulAbout {
       name
       portrait {
+        description
+        file {
+          url
+        }
+      }
+      logo {
         description
         file {
           url

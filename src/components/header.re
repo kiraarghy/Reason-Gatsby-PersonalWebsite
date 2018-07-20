@@ -5,20 +5,19 @@ module Styles = {
 
   let wrapper =
     style([
-      media("(min-width: 700px)", [gridColumn(4, 5)]),
-      gridColumn(4, 7),
+      media("(min-width: 700px)", [display(none)]),
+      gridColumn(6, 8),
     ]);
 
   let text =
     style([
-      fontSize(`vw(8.0)),
+      fontSize(`vw(10.0)),
       zIndex(2),
       left(`percent(25.0)),
-      marginTop(`px(50)),
+      marginTop(`px(90)),
       top(`percent(0.0)),
       minWidth(`px(150)),
       textTransform(uppercase),
-      media("(min-width: 700px)", [position(sticky)]),
       color(hex("FFFFFF")),
     ]);
 };
@@ -41,6 +40,7 @@ type contentfulAbout = {
   .
   name: string,
   portrait: portrait,
+  logo: portrait,
   content: blah,
 };
 
