@@ -35,7 +35,7 @@ module Styles = {
     ]);
 
   let header = style([paddingTop(`px(45)), marginLeft(`percent(3.0))]);
-  let content = style([margin(`percent(3.0))]);
+  let content = style([margin(`percent(4.0))]);
 };
 
 let make = (~data, _children) => {
@@ -50,7 +50,7 @@ let make = (~data, _children) => {
       <h1 className=Styles.header>
         (ReasonReact.string(data##projectTItle))
       </h1>
-      <p className=Styles.content>
+      <div className=Styles.content>
         (
           ReasonReact.array(
             Array.mapi(
@@ -66,6 +66,6 @@ let make = (~data, _children) => {
             ),
           )
         )
-      </p>
+      </div>
     </a>,
 };
